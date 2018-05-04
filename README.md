@@ -1,5 +1,5 @@
 # Regression Connectome
-Experiments regarding the creation of graphs describing bidirectional relations between feature nodes for homogeneous prediction
+This project consists of an experiment regarding the creation of graphs describing bidirectional relations between data features in order to lay the groundwork for a homogeneous prediction environment where all data is treated equally.
 
 ## Background
 Machine learning is all about making inferences and predictions on new data. The training features are usually isolated from the output results. 
