@@ -13,6 +13,7 @@ A classical approach is to specificy a task, e.g. predict the petal width from t
 
 ### Process
 At first, a complete graph is created with a node for each feature (4 in our case). Then, a linear regression is trained between every two nodes (for a total of 12 in our Iris case).
+
 ![Graph](https://github.com/paubric/python-regression-connectome/blob/master/graph.png)
 
 After training we have obtained the following values for slopes and intercepts.
@@ -30,7 +31,7 @@ After training we have obtained the following values for slopes and intercepts.
 (3, 1) [-0.20257264] [0.40725126]
 (3, 2) [2.22588531] [0.15553342]
 ```
-In this experiment we compare the cost of the **average** of the 3 regression results toward one node to the individual results. The average regression performance is, effectively, above average, being the best in half the cases.
+In this experiment we compare the cost of the **average** of the 3 regression results toward one node to the individual results. 
 ```
 Cost:  0.0
 Cost:  1.7749370367472766e-28
@@ -56,3 +57,4 @@ Cost:  2.2790684589900794e-29
 Cost:  0.0
 Special cost:  3.865418435582958e-29 
 ```
+The average regression (special cost) performance is, effectively, above average, being the best in half the cases.
