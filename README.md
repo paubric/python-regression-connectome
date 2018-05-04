@@ -9,14 +9,14 @@ In a supervised learning scenario, creating a model which would predict Y by usi
 ### Example
 The [Iris Dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) data set consists of 50 samples from each of three species of Iris. Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. 
 
-A classical approach is to specificy a task, e.g. predict the petal width from the other features. A machine learning model, like a multilayer perceptron would be trained on the (X -> Y) pairs. Alternatively, information describing the internal area from the petal width would not be harnessed (Y -> X). Neither would the information describing the sepal width from the sepal length (X -> X).
+A classical approach is to specificy a task, e.g. predict the petal width from the other features. A machine learning model, like a multilayer perceptron would be trained on the (X -> Y) pairs. Alternatively, information describing the sepal width from the petal width would not be harnessed (Y -> X). Neither would the information describing the sepal width from the sepal length (X -> X).
 
 ### Process
 At first, a complete graph is created with a node for each feature (4 in our case). Then, a linear regression is trained between every two nodes (for a total of 12 in our Iris case).
 
 ![Graph](https://github.com/paubric/python-regression-connectome/blob/master/graph.png)
 
-After training we have obtained the following values for slopes and intercepts.
+After training, we have obtained the following values for slopes and intercepts.
 ```
 (0, 1) [-0.05726823] [0.42088597]
 (0, 2) [1.85750967] [-0.89867058]
@@ -31,7 +31,7 @@ After training we have obtained the following values for slopes and intercepts.
 (3, 1) [-0.20257264] [0.40725126]
 (3, 2) [2.22588531] [0.15553342]
 ```
-In this experiment we compare the cost of the **average** of the 3 regression results toward one node to the individual results. 
+In this experiment we compare the cost of the **average** of the 3 regression results toward one node (we iterate between all 4 and repeat the tests) to the individual results. 
 ```
 Cost:  0.0
 Cost:  1.7749370367472766e-28
@@ -57,4 +57,4 @@ Cost:  2.2790684589900794e-29
 Cost:  0.0
 Special cost:  3.865418435582958e-29 
 ```
-The average regression (special cost) performance is, effectively, above average, being the best in half the cases.
+We can notice that there is a 0 cost from a node to itself. More importantly, the average regression (_Special cost_) performance is, effectively, above average, being the best in half the cases.
