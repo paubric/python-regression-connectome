@@ -14,6 +14,7 @@ A classical approach is to specificy a task, e.g. predict the petal width from t
 ### Process
 At first, a complete graph is created with a node for each feature (4 in our case). Then, a linear regression is trained between every two nodes (for a total of 12 in our Iris case).
 ![Graph](https://github.com/paubric/python-regression-connectome/blob/master/graph.png)
+
 After training we have obtained the following values for slopes and intercepts.
 ```
 (0, 1) [-0.05726823] [0.42088597]
